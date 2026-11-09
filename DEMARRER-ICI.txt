@@ -1,0 +1,28 @@
+MAWID — application de prise de rendez-vous dentaire (démo)
+==========================================================
+
+Prérequis : Node.js 20 ou plus récent.
+
+3 commandes, dans ce dossier :
+
+    npm install
+    cp .env.example .env
+    npm run db:reset
+    npm start
+
+Puis ouvrir :  http://localhost:4000
+
+Comptes de démonstration (mot de passe : Demo2026!dent)
+  dentiste@demo.dz      -> cabinet El Yasmine (Alger)
+  secretaire@demo.dz    -> secrétaire du même cabinet
+  dentiste.nour@demo.dz -> cabinet Dr Nour (Oran)
+
+Autres commandes utiles
+  npm test                 tests du code (19 serveur + 10 interface)
+  npm run db:appointments  table des rendez-vous
+  npm run db:sql -- "SELECT status, COUNT(*) n FROM appointments GROUP BY status"
+  npm run db:reset         remet les données de démo à zéro
+
+Tout est fictif : aucun e-mail, SMS ni WhatsApp n'est réellement envoyé.
+Guide détaillé : GUIDE-TEST.md — documentation complète : README.md
+Captures d'écran : .shots/ et VOIR-APPLICATION.html (double-clic, hors ligne)

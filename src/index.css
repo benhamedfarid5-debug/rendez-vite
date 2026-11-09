@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-sand-50 text-ink-900 font-sans antialiased;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-600 ring-offset-2 ring-offset-white;
+  }
+  /* Chiffres alignés pour les heures et les montants */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+  [dir='rtl'] .flip-x {
+    transform: scaleX(-1);
+  }
+  [dir='rtl'] body {
+    letter-spacing: 0;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl bg-white shadow-card ring-1 ring-black/[0.04];
+  }
+  .btn {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl px-4 text-sm font-semibold
+      transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white hover:bg-brand-700 active:bg-brand-800;
+  }
+  .btn-secondary {
+    @apply btn bg-white text-ink-700 ring-1 ring-inset ring-slate-300 hover:bg-slate-50;
+  }
+  .btn-ghost {
+    @apply btn text-brand-700 hover:bg-brand-50;
+  }
+  .btn-danger {
+    @apply btn bg-red-600 text-white hover:bg-red-700;
+  }
+  .btn-sm {
+    @apply min-h-[36px] px-3 text-[13px];
+  }
+  .input {
+    @apply block w-full min-h-[44px] rounded-xl border border-slate-300 bg-white px-3 py-2 text-[15px] text-ink-900
+      placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-ink-700;
+  }
+  .hint {
+    @apply mt-1 text-xs text-ink-500;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium;
+  }
+  .skeleton {
+    @apply animate-pulse rounded-lg bg-slate-200/70;
+  }
+  .link {
+    @apply text-brand-700 underline decoration-brand-300 underline-offset-2 hover:decoration-brand-600;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+}

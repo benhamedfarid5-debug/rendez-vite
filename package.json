@@ -1,0 +1,58 @@
+{
+  "name": "mawid-dz",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Mawid — prise de rendez-vous dentaire en Algérie (FR/AR), bilingue, mobile-first",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:server": "node --watch server/index.js",
+    "dev:client": "vite",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "db:migrate": "node server/cli/migrate.js",
+    "db:seed": "node server/cli/seed.js",
+    "db:reset": "node server/cli/seed.js --force",
+    "test": "npm run test:server && npm run test:client",
+    "test:server": "node --test server/tests/*.test.js",
+    "test:client": "vitest run",
+    "db:purge": "node server/cli/purge.js",
+    "screenshots": "node scripts/screenshots.mjs",
+    "preview:check": "node scripts/preview-check.mjs",
+    "db:appointments": "node server/cli/appointments.js",
+    "db:sql": "node server/cli/sql.js"
+  },
+  "dependencies": {
+    "bcryptjs": "2.4.3",
+    "dotenv": "16.4.7",
+    "express": "4.21.2",
+    "jsqr": "1.4.0",
+    "leaflet": "^1.9.4",
+    "nodemailer": "^6.10.1",
+    "pdfkit": "^0.15.2",
+    "qrcode": "1.5.4",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "6.30.1",
+    "zod": "3.24.4"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "6.6.3",
+    "@testing-library/react": "16.3.0",
+    "@types/leaflet": "^1.9.12",
+    "@types/react": "18.3.23",
+    "@types/react-dom": "18.3.7",
+    "@vitejs/plugin-react": "4.7.0",
+    "autoprefixer": "10.6.2",
+    "jsdom": "25.0.1",
+    "postcss": "8.5.6",
+    "supertest": "7.1.1",
+    "tailwindcss": "3.4.17",
+    "typescript": "5.9.2",
+    "vite": "5.4.20",
+    "vitest": "2.1.9"
+  }
+}
