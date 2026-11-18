@@ -5,3 +5,4 @@ data
 *.log
 deploy/*.tar.gz
 server/tests
+android
